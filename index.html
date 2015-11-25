@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--------------------------------------------------------------------------------------------->
+<!-- oh hai... sorry, i'm not nearly trutrans enough for this to be good code.               -->
+<!--------------------------------------------------------------------------------------------->
+<!-- the intent here is not to make fun of non-binary genders; it is to point out            -->
+<!-- the arbitrary of gender assignment. i am a surrealist; as such, i believe every single  -->
+<!-- one of these genders literally exists, and that chance contains cosmic truth.           -->
+<!-- don't hate what you don't understand! (whether that is surrealism or non-binary gender) -->
+<!--------------------------------------------------------------------------------------------->
+<!-- i do not care what you do with this code! i literally could not care less. use it,      -->
+<!-- reuse it, subvert it, sell it, print it out, ball it up and throw it at republicans.    -->
+<!-- it makes no difference to me! just don't be a dick, k? thx!!                            -->
+<!--------------------------------------------------------------------------------------------->
+<meta charset="UTF-8">
+<title>What is my gender?</title>
+<script>
+function generateGender() {
+    var prefixes = ["poly", "demi", "anarcho", "spirono", "polydemi", "demipoly", "anarchodemi", 
+                    "anarchopoly", "quasi", "midi", "xeno", "xenodemi", "xenopoly", "anarchoxeno", "robo", 
+                    "auto", "ultra-", "rebyl", "rebel", "femme-", "pan", "omni", "meta-", "post-", "dis",
+                    "space-", "femina-", "neutra-", "masculo", "masclo", "mysterio"]
+    var middles = ["girl", "boy", "gyrl", "boi", "queery", "chic", "grrl", "robot", "golem", "neuter", 
+               "third", "boygirl", "girlboy", "birl", "man", "gender", "sex", "being", "human", "alien", 
+               "extragender", "genderless", "gender", "pan", "trill", "womyn", "cool", "quirl", "squirtle",
+               "meow"]
+    var finals = ["-core", "³", "dax", "piece", "god", "goddess", "thing", "roar", "wizard", "witch", "++",
+                  "person", "muse", "mage", "doo", "majig", "bit", "river", "personthing", "beast",
+                  "queer", "-chlorian", "kin", "kid"]
+    var preindex = Math.floor(Math.random() * prefixes.length)
+    var midindex = Math.floor(Math.random() * middles.length)
+    var finalindex = Math.floor(Math.random() * finals.length)
+    var preornot = Math.floor(Math.random() * 100)
+    var finalornot = Math.floor(Math.random() * 100)
+    if (preornot > 15) {
+        if (finalornot > 65) {
+            return prefixes[preindex] + middles[midindex] + finals[finalindex]
+        }
+        return prefixes[preindex] + middles[midindex]
+    } else {
+        return middles[midindex] + finals[finalindex]
+    }
+}
+function genderHTML() {
+    var gender = generateGender()
+    return "<h2>Your gender is " + gender + ".</h2>"
+}
+function reassign() {
+    document.getElementById("gender").innerHTML = genderHTML()
+}
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+<style type="text/css">
+#gender, #justacceptit, #dontlikeit {
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header" id="justacceptit"><h3>Just accept it...</h3></div>
+</div>
+<div class="container">
+<div class="jumbotron" id="gender">
+<script>
+document.write(genderHTML())
+</script>
+</div>
+</div>
+<div id="dontlikeit"><p><h4>Don't like it?</h4></p>
+<div><button type="button" class="btn btn-lg btn-primary" onclick="reassign()">Click for a new gender.</button></div>
+</div>
+</body>
+</html>
