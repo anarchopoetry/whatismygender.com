@@ -17,19 +17,20 @@
 <title>What is my gender?</title>
 <script>
 
-var prefixes = ["poly", "demi", "anarcho", "spirono", "quasi", "midi", "xeno", "auto", "ultra-",
+var prefixes = ["poly", "demi", "anarcho", "spirono", "quasi", "midi", "xeno", "auto", "presto",
                     "rebyl", "rebel", "femme-", "pan", "meta-", "post-", "dis", "anti", "contra-",
                     "space-", "femina-", "neutra-", "masculo", "masclo", "mysterio", "pacifi", "atlanti",
-                    "antarcti", "arcto", "ecto", "eu", "arachno", "uni", "duo", "tri"]
+                    "antarcti", "arcto", "ecto", "eu", "arachno", "uni", "duo", "tri", "dys",
+                    "outer", "exo"]
 
 var middles = ["girl", "boy", "gyrl", "boi", "queery", "chic", "grrl", "robot", "golem", "neuter", 
-               "third", "boygirl", "girlboy", "birl", "man", "gender", "sex", "being", "human", "alien", 
+               "third", "boygirl", "girlboy", "birl", "man", "jenner", "sex", "being", "human", "alien", 
                "extragender", "genderless", "gender", "pan", "trill", "womyn", "cool", "quirl", "squirtle",
-               "meow"]
+               "meow", "butter"]
 
-var finals = ["core", "³", "dax", "piece", "god", "goddess", "thing", "roar", "wizard", "witch", "++",
-                  "person", "muse", "mage", "doo", "majig", "bit", "river", "personthing", "beast",
-                  "queer", "chlorian", "kin", "kid"]
+var finals = ["core", "³", "dax", "piece", "god", "goddess", "thing", "growl", "wizard", "witch", "++",
+                  "person", "muse", "mage", "doo", "majig", "bit", "stream", "personthing", "beast",
+                  "queer", "chlorian", "kin", "kid", "dish"]
 
 function generateGender() {
 
@@ -55,7 +56,7 @@ function generateGender() {
 }
 function genderHTML() {
     var gender = generateGender()
-    return "<h2>Your gender is " + gender + ".</h2>"
+    return "<h2>Your gender is <strong>" + gender + "</strong>.</h2>"
 }
 function reassign() {
     document.getElementById("gender").innerHTML = genderHTML()
