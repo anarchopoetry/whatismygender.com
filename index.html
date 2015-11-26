@@ -19,19 +19,19 @@
 <script>
 
 var prefixes = ["poly", "demi", "anarcho", "spirono", "quasi", "midi", "xeno", "auto", "presto",
-                    "rebyl", "rebel", "femme-", "pan", "meta-", "post-", "dis", "anti", "contra-",
-                    "space-", "femina-", "neutra-", "masculo", "masclo", "mysterio", "pacifi", "atlanti",
+                    "rebyl", "rebel", "femme", "pan", "meta", "post", "dis", "anti", "contra",
+                    "space", "femina", "neutra", "masculo", "man", "mysterio", "pacifi", "atlanti",
                     "antarcti", "arcto", "ecto", "eu", "arachno", "uni", "duo", "tri", "dys",
-                    "exo"]
+                    "exo", "sappho", "dendro", "trans", "seismo"]
 
 var middles = ["girl", "boy", "gyrl", "boi", "queery", "chic", "grrl", "robot", "golem", "neuter", 
-               "third", "boygirl", "girlboy", "birl", "man", "jenner", "sex", "being", "human", "alien", 
-               "extragender", "genderless", "gender", "pan", "trill", "womyn", "cool", "quirl", "squirtle",
-               "meow", "butter"]
+               "third", "boygirl", "girlboy", "birl", "male", "jenner", "sex", "being", "human", 
+               "extraterrestrial", "extragender", "genderless", "gender", "pan", "trill", "womyn", "cool", 
+               "quirl", "squirtle", "meow", "butter", "female", "man"]
 
 var finals = ["core", "³", "dax", "piece", "god", "goddess", "thing", "growl", "wizard", "witch", "++",
                   "person", "muse", "mage", "doo", "majig", "bit", "stream", "personthing", "beast",
-                  "queer", "chlorian", "kin", "kid", "dish", "corn", "phoria"]
+                  "queer", "chlorian", "kin", "kid", "dish", "corn", "phoria", "*", "hound"]
 
 function generateGender() {
 
@@ -41,16 +41,24 @@ function generateGender() {
     var preornot = Math.floor(Math.random() * 100)
     var finalornot = Math.floor(Math.random() * 100)
     if (preornot > 15) {
-        var prefix = prefixes[preindex]
+        var word = prefixes[preindex]
         preornot = Math.floor(Math.random() * 100)
         if (preornot > 75) {
             preindex = Math.floor(Math.random() * prefixes.length)
-            prefix = prefix + prefixes[preindex]
+            if (word.charAt(word.length-1) == prefixes[preindex].charAt(0)) {
+                word = word + "-" + prefixes[preindex]
+            }
+            word = word + prefixes[preindex]
+        }
+        if (word.charAt(word.length-1) == middles[midindex].charAt(0)) {
+            word = word + "-" + middles[midindex]
+        } else {
+            word = word + middles[midindex]
         }
         if (finalornot > 65) {
-            return prefix + middles[midindex] + finals[finalindex]
+            word = word + finals[finalindex]
         }
-        return prefix + middles[midindex]
+        return word
     } else {
         return middles[midindex] + finals[finalindex]
     }
