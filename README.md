@@ -1,5 +1,5 @@
 # whatismygender.com
-Gender Generator
+Gender Generator 2.0
 by anarchopoetry
 
 the intent here is not to make fun of non-binary genders; it is to point out the arbitrarity of gender assignment. i am a surrealist; as such, i believe every single one of these genders literally exists, and that chance contains cosmic truth. don't hate what you don't understand! (whether that is surrealism or non-binary gender).
